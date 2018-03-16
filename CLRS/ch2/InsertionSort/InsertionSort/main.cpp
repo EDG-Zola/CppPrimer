@@ -25,7 +25,7 @@ int *insertionSort(int *A, int length){
 		i = j - 1;
 		while ((i >= 0 ) && (*(A+i) > key)){
 			*(A+i+1) = *(A+i);
-			i--;
+			i--;//当i = 0时，这里i为-1，但是不影响排序
 		}
 		*(A+i+1) = key;
 	}
