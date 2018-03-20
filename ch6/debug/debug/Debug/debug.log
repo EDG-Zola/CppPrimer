@@ -1,0 +1,7 @@
+﻿     0>E:\GitWorkstation\CppPrimer\ch6\debug\debug\debug.vcxproj : error MSB4014: 生成已意外停止，因为发生内部故障。
+E:\GitWorkstation\CppPrimer\ch6\debug\debug\debug.vcxproj : error MSB4014: Microsoft.Build.Exceptions.BuildAbortedException: 已取消生成。未能以子节点形式启动 MSBuild.exe，因为在位置“C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe”处找不到该程序。如有必要，请在 BuildParameters 中或使用 MSBUILD_EXE_PATH 环境变量指定正确的位置。
+E:\GitWorkstation\CppPrimer\ch6\debug\debug\debug.vcxproj : error MSB4014:    在 Microsoft.Build.BackEnd.NodeManager.AttemptCreateNode(INodeProvider nodeProvider, NodeConfiguration nodeConfiguration)
+E:\GitWorkstation\CppPrimer\ch6\debug\debug\debug.vcxproj : error MSB4014:    在 Microsoft.Build.BackEnd.NodeManager.CreateNode(NodeConfiguration configuration, NodeAffinity nodeAffinity)
+E:\GitWorkstation\CppPrimer\ch6\debug\debug\debug.vcxproj : error MSB4014:    在 Microsoft.Build.Execution.BuildManager.PerformSchedulingActions(IEnumerable`1 responses)
+E:\GitWorkstation\CppPrimer\ch6\debug\debug\debug.vcxproj : error MSB4014:    在 Microsoft.Build.Execution.BuildManager.HandleNewRequest(Int32 node, BuildRequestBlocker blocker)
+E:\GitWorkstation\CppPrimer\ch6\debug\debug\debug.vcxproj : error MSB4014:    在 Microsoft.Build.Execution.BuildManager.IssueRequestToScheduler(BuildSubmission submission, Boolean allowMainThreadBuild, BuildRequestBlocker blocker)
