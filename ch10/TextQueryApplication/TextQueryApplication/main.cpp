@@ -3,16 +3,6 @@
 /************************************************************************/
 /* 函数声明                                                                     */
 /************************************************************************/
-//ifstream& open_file(const ifstream &in, const string &file);//打开文件函数
-//void print_results(const set<TextQuery::line_no>& locs, const string& sought, TextQuery& file);//交互函数
-//string make_plural(size_t ctr, const string &word, const string &ending);//根据单词出现的次数为单数还是负数打印是否带s
-
-ifstream& open_file(ifstream& in, const string &file){
-	in.close();//关闭文件流，以防文件已经打开
-	in.clear();//关闭文件流，以防文件已经打开
-	in.open(file.c_str());//打开文件file
-	return in;
-}
 
 string make_plural(size_t ctr, const string& word, const string& ending){
 	return (ctr == 1) ? word : word +ending;
@@ -35,8 +25,8 @@ void print_results(const set<TextQuery::line_no>& locs, const string& sought, Te
 /************************************************************************/
 
 int main(int argc, char **argv){
-	ifstream infile;
-	if(argc < 2 && !open_file(infile, argv[1])){
+	std::ifstream infile;
+	if(argc < 2 && infile.open(argv[1])){
 		cerr << "No input file!" << endl;
 		return EXIT_FAILURE;
 	}
