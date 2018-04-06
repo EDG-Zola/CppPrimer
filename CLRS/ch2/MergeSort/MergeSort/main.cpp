@@ -12,8 +12,9 @@ void merge(int *A, int p, int q, int r);
 void mergeSort(int *A, int p, int r);
 int main(){
 	system("Color 5E");
-	int A[8] = {2, 4, 5, 7, 1, 2, 3, 6};
-	mergeSort(A, 0, 7);//πÈ≤¢≈≈–Ú
+	const int arraySize = 8;
+	int A[arraySize] = {2, 4, 5, 7, 1, 2, 3, 6};
+	mergeSort(A, 0, arraySize - 1);//πÈ≤¢≈≈–Ú
 	for (int i=0; i < 8; ++i)
 		cout << *(A+i) << " ";
 	cout << endl;
@@ -33,17 +34,17 @@ void mergeSort(int *A, int p, int r){
 void merge(int *A, int p, int q, int r){
 	int n1 = q - p + 1;
 	int n2 = r - q;
-	int *L = NULL;
-	int *R = NULL;
+	int *L = new int[n1+1];
+	int *R = new int[n2+1];
 	//let L[1 ... n1+1] and R[1 ... n2+1] be new arrays
 	for (int i = 0; i < n1; ++i)
-		*(L+i) = A[p + i -1];
+		*(L+i) = A[p + i];
 	for (int j = 0; j < n2; ++j)
-		*(R+j) = A[q + j];
+		*(R+j) = A[q + j +1];
 	*(L+n1) = 'q';
 	*(R+n2) = 'q';
 	int i = 0, j = 0;
-	for (int k = p-1; k < r; ++k){
+	for (int k = p; k <= r; ++k){
 		if (*(L+i) <= *(R+j)){
 			A[k] = *(L+i);
 			i += 1;
@@ -53,4 +54,6 @@ void merge(int *A, int p, int q, int r){
 			j += 1;
 		}
 	}
+	delete [] L;
+	delete [] R;
 }
